@@ -1,5 +1,7 @@
 package Section8_Operators;
 
+import io.reactivex.rxjava3.core.Observable;
+
 public class Employee {
 
     private Integer id;
@@ -12,6 +14,20 @@ public class Employee {
         this.name = name;
         this.salary = salary;
         this.rating = rating;
+    }
+
+    public static Observable<Employee> observable(){
+        Observable<Employee> observables = Observable.just(
+                new Employee(101, "Alexa", 60000, 4.0),
+                new Employee(123, "Tom", 94000, 4.7),
+                new Employee(102, "Mike", 65000, 4.0),
+                new Employee(106, "Anna", 85000, 4.4),
+                new Employee(105, "George", 50000, 3.6),
+                new Employee(111, "Daniel", 60000, 4.0),
+                new Employee(112, "Lucy", 75000, 4.0),
+                new Employee(1113, "Harry", 55000, 4.0)
+        );
+        return observables;
     }
 
     public Integer getId() {
