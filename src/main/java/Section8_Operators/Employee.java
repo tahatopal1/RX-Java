@@ -71,4 +71,13 @@ public class Employee {
                 ", rating=" + rating +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Employee emp = (Employee) obj;
+        return this.id == emp.getId()
+                    && this.name.equals(emp.getId())
+                    && this.rating == emp.getId()
+                    && this.salary == emp.getSalary();
+    }
 }
